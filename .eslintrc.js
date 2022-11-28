@@ -4,8 +4,9 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
-    'airbnb',
+    'next/core-web-vitals',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -14,11 +15,10 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
-    'react/no-unescaped-entities': 0,
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-page-custom-font': 'off',
     'eslintreact/no-danger': 0,
     'react/jsx-max-props-per-line': 0,
     'react/jsx-first-prop-new-line': 0,
@@ -43,10 +43,7 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'max-len': [
-      2,
-      1050,
-    ],
+    'max-len': [2, 1050],
     'no-multiple-empty-lines': [
       'error',
       {
@@ -57,16 +54,7 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: [
-          '_d',
-          '_dh',
-          '_h',
-          '_id',
-          '_m',
-          '_n',
-          '_t',
-          '_text',
-        ],
+        allow: ['_d', '_dh', '_h', '_id', '_m', '_n', '_t', '_text'],
       },
     ],
     'object-curly-newline': 0,
@@ -80,19 +68,9 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
-        components: [
-          'Link',
-        ],
-        specialLink: [
-          'to',
-          'hrefLeft',
-          'hrefRight',
-        ],
-        aspects: [
-          'noHref',
-          'invalidHref',
-          'preferButton',
-        ],
+        components: ['Link'],
+        specialLink: ['to', 'hrefLeft', 'hrefRight'],
+        aspects: ['noHref', 'invalidHref', 'preferButton'],
       },
     ],
   },
