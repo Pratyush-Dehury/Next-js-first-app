@@ -35,6 +35,7 @@ const Explore = () => {
             <ExploreCard
               key={world.id}
               {...world}
+              ImageUrl={world.imgUrl}
               index={index}
               active={active}
               handleClick={setActive}
